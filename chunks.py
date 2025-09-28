@@ -10,11 +10,16 @@ print(lst, len_list, len_chunk, sep='\n')
 
 
 def chunks(lst, n):
+    if type(lst) != list:
+        return "ERR0R"
+    if type(n) != int or n < 0:
+        return "ERR0R"
+
     res = []
     for i in range(0, len(lst), n):
         res.append(lst[i:i+n])
 
     return res
 
-print(chunks(lst, len_chunk))
+print(chunks(lst, -9))
 
